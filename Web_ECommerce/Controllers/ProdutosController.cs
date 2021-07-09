@@ -144,5 +144,22 @@ namespace Web_ECommerce.Controllers
             return idUsuario.Id;
         }
 
+
+        // API que retorna a Listagem de Todos Produtos
+        [AllowAnonymous]
+        [HttpGet("/api/ListarProdutosComEstoque")]
+        public async Task<JsonResult> ListarProdutosComEstoque() 
+        {
+            return Json(await _InterfaceProductApp.ListarProdutosComEstoque());
+        
+        }
+
+        [HttpPost("/api/AdcionarProdutoCarrinho")]
+        public async Task AdcionarProdutoCarrinho(string id, string nome, string qtd) 
+        {
+            
+        
+        }
+
     }
 }
